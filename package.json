@@ -1,0 +1,11 @@
+{
+  "name": "projet-ofmyfood",
+  "version": "1.0.0",
+  "description": "sass de Oh My Food",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/ohmyfood.scss:./projet_ohmyfood/Ohmyfood.css"
+  },
+  "author": "Kudeplon",
+  "license": "ISC"
+}

@@ -1,0 +1,384 @@
+*{
+    box-sizing: border-box;
+}
+body, ul, li, h1, h2, h3, h4, p, img {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    margin: 30px auto 0 15px;
+    z-index: 15;
+    font-size: 30px;
+}
+h1, h2, h3 {
+    font-size: 1rem;
+    font-family: 'Shrikhand', cursive;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+}
+
+.fa, .fab, .fad, .fal, .far, .fas {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+}
+
+.fa, .far, .fas {
+    font-family: "Font Awesome 5 Free";
+}
+
+.fa, .fas {
+    font-weight: 900;
+}
+
+.retour :hover {
+    color:#E16FDA;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    position: relative;
+}
+
+.header__logo {
+    position: relative;
+    margin: 1rem 100px;
+}
+
+.header__logo__ohmyfood {
+    width: 100%;
+    height: 100%;
+    font-size: clamp(28px,5vw,68px);
+}
+
+.retour {
+    position: absolute;
+    min-width: 20px;
+    min-height: 20px;
+    z-index: 5;
+    font-size: clamp(18px,5vw,32px);
+    font-weight: bold;
+    top: 35%;
+    left: 5%;
+}
+
+img {
+    display: block;
+}
+
+.pic_fit {
+    object-fit: cover;
+}
+
+.PhotoTable4 {
+    z-index: 1;
+    width: 100%;
+    min-height: 286px;
+    height: auto;
+    display: flex;
+    background: no-repeat center/50% url(./images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
+    background-size: cover;
+
+}
+
+.PhotoTable3 {
+    z-index: 1;
+    width: 100%;
+    min-height: 286px;
+    height: auto;
+    display: flex;
+    background: no-repeat center/50% url(./images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
+    background-size: cover;
+}
+
+.PhotoTable2 {
+    z-index: 1;
+    width: 100%;
+    min-height: 286px;
+    height: auto;
+    display: flex;
+    background: no-repeat center/50% url(./images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg);
+    background-size: cover;
+}
+
+.PhotoTable {
+    z-index: 1;
+    width: 100%;
+    min-height: 286px;
+    height: auto;
+    display: flex;
+    background: no-repeat center/50% url(./images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
+    background-size: cover;
+}
+
+.gastronomie {
+    background-color: #f6f6f6;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-color: #f6f6f6  transparent;
+    z-index: 5;
+    margin-top: -60px;
+}
+
+.gastronomie__LaCarte {
+    display: flex;
+    flex-direction: column;
+    z-index: 15;
+}
+
+.Container_coeur {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    position: relative;
+    margin-right: 30px;
+    margin-top: -30px;
+}
+
+.coeurplein, .coeurvide {
+    font-size: 23.5px;
+    font-weight: 100;
+    position: absolute;
+    right: 20px;
+    cursor: pointer;
+}
+
+i.coeurplein {
+    z-index: 6;
+    opacity: 0;
+    z-index: 8;
+}
+
+i.coeurvide {
+    z-index: 6;
+    opacity: 1;
+    height: 100%;
+}
+
+.entrées {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 15px;
+    z-index: 15;
+    transition: all 1.5s ease-out;
+}
+
+.dummy {
+    display: none;
+}
+
+.SousTitre {
+    margin-left: 15px;
+    margin-top: 40px;
+    padding-bottom: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    max-width: 41px;
+    text-align: left;
+    border-bottom: solid #99E2D0;
+}
+
+.entrées__choix, .plats__choix, .desserts__choix {
+    background-color: white;
+    border-radius: 20px;
+    margin: 0 15px;
+    margin: 0 14px;
+    width: 90%;
+    width: 93%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-left: 10px;
+    overflow: hidden;
+    box-shadow: 6px 6px 4px #e7e7e7;
+    cursor: pointer;
+}
+
+.visible::before {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 5px;
+    margin: 0 15px;
+    overflow: hidden;
+    transform: translateX(0%);
+}
+
+.check::after{
+    cursor: pointer;
+    transform: translateX(100%);
+    transition: transform 330ms ease-in-out;
+    animation: slide-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation-fill-mode: backwards;
+    display: flex;
+    font-size: 22px;
+    color: white;
+    background-color: #99E2D0;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    z-index: 15;
+    height: 100%;
+    min-height: 69px;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    flex-wrap: wrap;
+    max-width: 0px;
+    width: 0%;
+    margin-right: 0px;
+    margin-left: auto;
+    transition-duration: 5.5s;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+}
+
+.intitule {
+    margin-top: 11px;
+    margin-left: 5px;
+    overflow: hidden;
+}
+
+.intitule p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 18px;
+}
+
+.detail_prix {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    justify-content: space-between;
+    align-items: baseline;
+    cursor: pointer;
+    flex-wrap: nowrap;
+}
+
+.detail {
+    flex: 3;
+    margin-left: 5px;
+    font-size: 13px;
+    font-size: 15px;
+    font-size: 14px;
+    overflow: hidden;
+}
+
+.detail p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.prix {
+    flex: 1;
+    text-align: end;
+    margin-right: 30px;
+    margin-bottom: 11px;
+    font-size: 13px;
+    font-size: 16px;
+}
+
+.plats {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        z-index: 15;
+}
+
+.desserts {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 15;
+}
+
+.Commander {
+    margin-top: 50px;
+    margin-bottom: 80px;
+    padding-left: 92px;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.Commander--input {
+    cursor: pointer;
+    width: 219px;
+    height: 53px;
+    color: white;
+    background: #E16FDA;
+    background: -webkit-linear-gradient(to bottom right, #E16FDA 0%, #E270DA 43%, #A55CDB 70%, #AB65ED 100%);
+    background: -moz-linear-gradient(to bottom right, #E16FDA 0%, #E270DA 43%, #A55CDB 70%, #AB65ED 100%);
+    background: linear-gradient(to bottom right, #E16FDA 0%, #E270DA 43%, #A55CDB 70%, #AB65ED 100%);
+    border-radius: 25px;
+    margin: 20px auto 30px auto;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    border: transparent;
+    box-shadow: 6px 6px 4px #e7e7e7;
+    transition: box-shadow 0.3s, filter 0.3s;
+}
+
+.Commander--input p {
+    color: white;
+    text-align: center;
+    margin-top: 17px;
+    font-weight: 500;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    background-color:#353535;
+    margin-top: 60px;
+    color: white;
+}
+
+footer > h3 {
+    margin-left: 15px;
+    font-family: 'shrikhand', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 25px;
+    margin-top: 25px;
+}
+
+.footer__bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-left: 15px;
+    margin-bottom: 35px;
+}
+
+footer a {
+    color: white;
+}
+
+footer a :hover {
+    color:#E16FDA;
+}
+
+.footer__bottom__row {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
