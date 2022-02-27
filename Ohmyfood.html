@@ -14,14 +14,20 @@
         <!--icones-->
         <script src="https://kit.fontawesome.com/1c49a1fbc0.js" crossorigin="anonymous"></script>
     </head>
+    <!--début du body-->
     <body>
+    <!--Header et Img-->
         <header>
             <div id="logo">
                 <img class="header__logo__ohmyfood pic_fit" src="images/logo/ohmyfood.png" alt="logo Ohmyfood">
             </div>
         </header>
 
-        <main>
+    <main>
+    <!--Loader de la page-->
+        <div id="preloader" class="displayfade">
+            <div id="loader"></div>
+        </div>
             <!-- la ville à saisir -->
             <article id="localisation">
                 <h2 class="dummy">Localisation</h2>
@@ -36,16 +42,16 @@
             </article>
 
             <!-- encart descriptif -->
-            <article id="descriptif">
-                <div class="info_descriptif">
+            <article class="descriptif">
+                <div class="info__descriptif">
                     <h1>Réservez le menu qui vous convient</h1>
                 </div>
-                <div class="info_descriptif">
+                <div class="info__descriptif">
                     <p>Découvrez des restaurants d'exception, sélectionnés par nos soins.</p>
                 </div>
-                <div class="info_descriptif">
+                <div class="info__descriptif">
 
-                    <div id="btn_xplore">
+                    <div class="descriptif__input--button"> <!-- remplace <input> -->
                         <a href="#restaurants"><p>Explorer nos restaurants</p></a>
                     </div>
 
@@ -56,6 +62,7 @@
             <!-- article fonctions  -->
             <article class="Explications">
                 <h2>Fonctionnement</h2>
+            <!--Petits onglets de déscription-->
                 <section class="Explications__options">
                     <h3 class="dummy">Options de fonctionnement</h3>
 
@@ -78,11 +85,12 @@
                 </section>
             </article>
 
-
+        <!--Présentation des restaurants-->
             <article id="restaurants" class="restaurants">
                 <h2>Restaurants</h2>
                 <div class="restaurants__ContainerFlex">
-
+        <!-- Flexbox des restaurants-->
+        <!--La Palette du goût-->
                     <div class="restaurants__ContainerFlex__Resto">
                         <div class="ContainerNew">
                             <div class="New">
@@ -105,7 +113,7 @@
                             </div>
                         </div>
                     </div>
-
+        <!--La note enchantée-->
                     <div class="restaurants__ContainerFlex__Resto">
                         <div class="ContainerNew">
                             <div class="New">
@@ -128,8 +136,8 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="restaurants__ContainerFlex__Resto">
+        <!-- A la française-->
+                    <div class="restaurants__ContainerFlex__Resto media2">
                         <a href="alafrançaise.html">
                             <img class="class_top pic_fit" src="./images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="3 À la française">
                         </a>
@@ -146,7 +154,7 @@
                             </div>
                         </div>
                     </div>
-
+        <!--Le délice des Sens-->
                     <div class="restaurants__ContainerFlex__Resto">
                         <a href="ledelicedessens.html">
                             <img class="class_top pic_fit" src="./images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="4 Le délice des sens">
@@ -170,7 +178,7 @@
             </article>
 
         </main>
-
+    <!--Début du footer-->
         <footer class="footer">
             <h3>ohmyfood</h3>
             <div class="footer__bottom">
