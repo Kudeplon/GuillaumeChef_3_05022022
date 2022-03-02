@@ -72,7 +72,7 @@ a {
     bottom: 5px;
     border-radius: 50%;
     border: 3px solid transparent;
-    border-top-color: #BA55D3;
+    border-top-color: #99E2D0;
     -webkit-animation: spin 3s linear 3;
     animation: spin 3s linear 3;
 }
@@ -85,7 +85,7 @@ a {
     bottom: 15px;
     border-radius: 50%;
     border: 3px solid transparent;
-    border-top-color: #FF00FF;
+    border-top-color: #AB65ED;
     -webkit-animation: spin 1.5s linear 2;
     animation: spin 1.5s linear 2;
 }
@@ -450,6 +450,11 @@ img {
     right: 20px;
 }
 
+.coeurvide {
+    padding-right: 1px;
+    padding-top: 1px;
+}
+
 i.coeurplein {
     opacity: 0;
     z-index: 8;
@@ -546,6 +551,7 @@ footer a :hover {
     display: flex;
     flex-direction: row;
     gap: 10px;
+
 }
 
 .fa, .fas {
@@ -556,9 +562,13 @@ footer a :hover {
     font-family: "Font Awesome 5 Free";
 }
 
+.padding {
+   padding-right: 7px;
+}
+
 /*Média queries pour les différentes tailles d'écran*/
 
-@media screen and (max-width: 1200px)
+@media screen and (min-width: 768px)
 {
     .header__logo__ohmyfood
      {
@@ -568,7 +578,7 @@ footer a :hover {
      }
  }
 
- @media screen and (max-width: 1200px)
+ @media screen and (min-width: 768px)
  {
      .Explications__options {
          display: inline-flex;
@@ -577,7 +587,7 @@ footer a :hover {
      }
  }
 
- @media screen and (max-width: 1200px)
+ @media screen and (min-width: 768px)
 {
     .restaurants__ContainerFlex
     {
@@ -588,39 +598,17 @@ footer a :hover {
     }
 }
 
-
-@media screen and (max-width: 300px)
+@media screen and (min-width: 767px)
 {
-   .header__logo__ohmyfood
-    {
-    width: 70%;
-    margin-left: auto;
-    margin-right: auto;
+.restaurants__ContainerFlex {
+    gap: 20px;
+    flex-direction: row;
+    margin-top: 45px;
+    flex-wrap: wrap;
     }
 }
 
-@media screen and (max-width: 300px)
-{
-    .Explications__options {
-        display: flex;
-        flex-direction: column;
-    }
-}
-
-@media screen and (max-width: 300px)
-{
-    .restaurants__ContainerFlex
-    {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 50%;
-    }
-}
-
-
-
-@media screen and (max-width: 768px)
+@media screen and (max-width: 767px)
 {
     .Explications__options {
         display: flex;
@@ -628,7 +616,7 @@ footer a :hover {
     }
 }
 
-@media screen and (max-width: 768px)
+@media screen and (max-width: 767px)
 {
     .restaurants__ContainerFlex
     {
