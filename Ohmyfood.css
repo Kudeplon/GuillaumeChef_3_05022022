@@ -1,3 +1,5 @@
+/*Paramètres globaux de la page*/
+
 ul, li, h1, h2, h3, h4, p, img {
     margin: 0;
     padding: 0;
@@ -33,14 +35,119 @@ a {
     text-decoration: none;
 }
 
+/* Paramètres et animation du loader*/
+
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 15;
+    background-color: #f5edff;
+    pointer-events: none;
+    opacity: 1;
+    animation: displayfade 500ms 1.75s forwards;
+}
+#loader {
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    width: 150px;
+    height: 150px;
+    margin: -75px 0 0 -75px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #9370DB;
+    -webkit-animation: spin 2s linear 5;
+    animation: spin 2s linear 5;
+}
+#loader:before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #BA55D3;
+    -webkit-animation: spin 3s linear 3;
+    animation: spin 3s linear 3;
+}
+#loader:after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #FF00FF;
+    -webkit-animation: spin 1.5s linear 2;
+    animation: spin 1.5s linear 2;
+}
+
+/*Paramètres pour faire disparaitre le loader*/
+
+.displayfade {
+    animation: displayfade 2s;
+    opacity: 0;
+    z-index: -1;
+}
+
+/*Keyframes pour animer le loader*/
+
+@-webkit-keyframes spin {
+    0%   {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+        z-index: 15;
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+        z-index: 15;
+    }
+}
+@keyframes spin {
+    0%   {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+        z-index: 15;
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+        z-index: 15;
+    }
+}
+
+@keyframes displayfade {
+   100% {
+    opacity: 0;
+    z-index: -1;
+    }
+}
+
 .dummy {
     display: none;
 }
+
+/*Paramètres du logo*/
 
 #logo {
     position: relative;
     margin: 1rem 100px;
 }
+
+/*Paramètre bandeau de la localisation client*/
 
 #localisation {
     background-color: #eaeaea;
@@ -84,7 +191,9 @@ a {
     border: none;
 }
 
-#descriptif {
+/*Paramètres du descriptif du site*/
+
+.descriptif {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -94,7 +203,7 @@ a {
     height: 289px;
 }
 
-.info_descriptif {
+.info__descriptif {
     margin: 0px auto;
     display: flex;
     justify-content: center;
@@ -103,7 +212,9 @@ a {
     width: 75%;
 }
 
-#btn_xplore {
+/*Paramètres du bouton*/
+
+.descriptif__input--button {
     width: 219px;
     height: 53px;
     color: white;
@@ -124,17 +235,19 @@ a {
 }
 
 
-#btn_xplore p {
+.descriptif__input--button p {
     color: white;
     text-align: center;
     margin-top: 17px;
     font-weight: 500;
 }
 
-#btn_xplore :hover{
-    transform:scale(1.15);
-    box-shadow:#7e7e7e;
+.descriptif__input--button:hover{
+        filter: brightness(110%);
+        box-shadow: 6px 6px 4px #333;
 }
+
+/* Paramètres des onglets de description*/
 
 .Explications>h2 {
     margin-left: 15px;
@@ -173,14 +286,16 @@ a {
     cursor: pointer;
 }
 
-.Explications__options__choix :hover {
-    color: lightgrey;
+a.Explications__options__choix:hover {
+    background-color: #f5edff;
 }
 
 .Explications__options i {
     color: #7e7e7e;
     font-size: 16px;
 }
+
+/*Paramètres de la bulle du chiffre*/
 
 .bulle {
     position: relative;
@@ -195,6 +310,8 @@ a {
     justify-content: center;
     align-items: center;
 }
+
+/*Paramètres des restaurant ( global, titre et organisation des fiches*/
 
 .restaurants {
     display: flex;
@@ -235,6 +352,8 @@ a {
     box-sizing: border-box;
 }
 
+/*Paramètres Encadré New*/
+
 .ContainerNew {
     z-index: 1;
     width: 100%;
@@ -262,6 +381,18 @@ a {
     cursor: default;
 }
 
+/*Paramètres globaux des images*/
+
+.pic_fit {
+    object-fit: cover;
+}
+
+img {
+    display: block;
+}
+
+/*Paramètres de la présentations des fiches resto*/
+
 .class_top {
     width: 100%;
     height: 175px;
@@ -284,17 +415,11 @@ a {
     box-sizing: border-box;
 }
 
+/*Paramètres de la définition des restaurant ( Nom et adresse )*/
+
 .class_bold {
     font-weight: bold;
     font-size: 16px;
-}
-
-.pic_fit {
-    object-fit: cover;
-}
-
-img {
-    display: block;
 }
 
 .FlexView {
@@ -308,6 +433,8 @@ img {
     padding-left: 15px;
     padding-bottom: 10px;
 }
+
+/* Paramètres du coeur et de son animation de remplissage */
 
 .Container_coeur {
     display: flex;
@@ -323,10 +450,64 @@ img {
     right: 20px;
 }
 
-.coeurplein {
-    color: #E16FDA;
-
+i.coeurplein {
+    opacity: 0;
+    z-index: 8;
 }
+
+i.coeurplein:hover {
+    z-index: 8;
+    animation: remplissage 0.3s linear forwards;
+    opacity: 1;
+}
+
+/*Keyframes pour l'animation du remplissage du coeur*/
+
+@keyframes remplissage {
+    0% {
+    opacity: .25;
+    background: linear-gradient(to top, #E16FDA 0%, #E270DA 43%, #A55CDB 70%, #AB65ED 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 26px;
+    }
+    25% {
+        opacity: .33;
+        background: linear-gradient(to top, #E16FDA 0%, #E270DA 43%, #A55CDB 70%, #AB65ED 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        font-size: 26px;
+    }
+    50% {
+        opacity: .50;
+        background: linear-gradient(to top, #E16FDA 0%, #E270DA 43%, #A55CDB 70%, #AB65ED 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        font-size: 26px;
+    }
+    75% {
+        opacity: .75;
+        background: linear-gradient(to top, #E16FDA 0%, #E270DA 43%, #A55CDB 70%, #AB65ED 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        font-size: 26px;
+    }
+    100% {
+        opacity: 1;
+        background: linear-gradient(to top, #E16FDA 0%, #E270DA 43%, #A55CDB 70%, #AB65ED 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        font-size: 26px;
+        margin-bottom: 5px;
+    }
+}
+
+/* Paramètres propres du footer*/
 
 .footer {
     display: flex;
@@ -373,5 +554,88 @@ footer a :hover {
 
 .fa, .far, .fas {
     font-family: "Font Awesome 5 Free";
+}
+
+/*Média queries pour les différentes tailles d'écran*/
+
+@media screen and (max-width: 1200px)
+{
+    .header__logo__ohmyfood
+     {
+     width: 70%;
+     margin-left: auto;
+     margin-right: auto;
+     }
+ }
+
+ @media screen and (max-width: 1200px)
+ {
+     .Explications__options {
+         display: inline-flex;
+         flex-direction: column;
+
+     }
+ }
+
+ @media screen and (max-width: 1200px)
+{
+    .restaurants__ContainerFlex
+    {
+    display: inline-flex;
+    flex-direction: column;
+    width: 100%;
+    height: 50%;
+    }
+}
+
+
+@media screen and (max-width: 300px)
+{
+   .header__logo__ohmyfood
+    {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    }
+}
+
+@media screen and (max-width: 300px)
+{
+    .Explications__options {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 300px)
+{
+    .restaurants__ContainerFlex
+    {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 50%;
+    }
+}
+
+
+
+@media screen and (max-width: 768px)
+{
+    .Explications__options {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 768px)
+{
+    .restaurants__ContainerFlex
+    {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 50%;
+    }
 }
 
