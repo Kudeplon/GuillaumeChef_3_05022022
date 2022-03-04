@@ -29,7 +29,7 @@ p {
     font-family: 'Roboto', sans-serif;
 }
 
-/* Paramètres glapobaux des icônes*/
+/* Paramètres globaux des icônes*/
 
 .fa, .fab, .fad, .fal, .far, .fas {
     -moz-osx-font-smoothing: grayscale;
@@ -237,9 +237,21 @@ i.coeurplein:hover {
     }
 }
 
-/*Paramètres des entrées*/
+/* Paramètres des Sous titres*/
 
+.SousTitre {
+    margin-left: 15px;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    max-width: 41px;
+    text-align: left;
+    border-bottom: solid #99E2D0;
+}
 
+/*Paramètres des des plats de la carte*/
 
 .plat {
     display: flex;
@@ -272,11 +284,6 @@ i.coeurplein:hover {
       margin-bottom: -2px;
   }
 
-  .detail_prix {
-      display: flex;
-      flex-direction: row;
-  }
-
   .content {
     display: flex;
     justify-content: space-between;
@@ -287,8 +294,6 @@ i.coeurplein:hover {
   .price {
     align-self: flex-end;
   }
-
-
 
   .checkbox {
     width: 0px;
@@ -337,19 +342,7 @@ i.coeurplein:hover {
     }
   }
 
-/*Paramètres globaux des recettes*/
-
-.SousTitre {
-    margin-left: 15px;
-    margin-top: 40px;
-    margin-bottom: 15px;
-    padding-bottom: 5px;
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    max-width: 41px;
-    text-align: left;
-    border-bottom: solid #99E2D0;
-}
+/*animation des Slide*/
 
 .slide-top {
     opacity: 0;
