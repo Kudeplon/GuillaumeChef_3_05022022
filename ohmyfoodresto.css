@@ -13,8 +13,9 @@ h1 {
     margin: 30px auto 0 15px;
     z-index: 15;
     font-size: 30px;
+    font-family: 'Shrikhand', cursive;
 }
-h1, h2, h3 {
+h2, h3 {
     font-size: 1rem;
     font-family: 'Shrikhand', cursive;
 }
@@ -28,7 +29,7 @@ p {
     font-family: 'Roboto', sans-serif;
 }
 
-/* Paramètres glapobaux des icônes*/
+/* Paramètres globaux des icônes*/
 
 .fa, .fab, .fad, .fal, .far, .fas {
     -moz-osx-font-smoothing: grayscale;
@@ -168,40 +169,75 @@ img {
 
 .coeurplein, .coeurvide {
     font-size: 23.5px;
-    font-weight: 100;
     position: absolute;
     right: 20px;
     cursor: pointer;
 }
 
+i.coeurvide {
+    padding-right: 2px;
+    padding-top: 2px;
+}
+
 i.coeurplein {
-    z-index: 6;
     opacity: 0;
     z-index: 8;
 }
 
-i.coeurvide {
-    z-index: 6;
+i.coeurplein:hover {
+    z-index: 8;
+    animation: remplir 0.3s linear forwards;
     opacity: 1;
-    height: 100%;
 }
 
-/*Paramètres des entrées*/
 
-.entrees {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    gap: 15px;
-    z-index: 15;
-    transition: all 1.5s ease-out;
+/*Keyframes pour l'animation du remplissage du coeur*/
+
+@keyframes remplir {
+    0% {
+    opacity: .25;
+    background: linear-gradient(to top, #E16FDA 0%, #E270DA 43%, #A55CDB 70%, #AB65ED 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 26px;
+    }
+    25% {
+        opacity: .33;
+        background: linear-gradient(to top, #E16FDA 0%, #E270DA 43%, #A55CDB 70%, #AB65ED 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        font-size: 26px;
+    }
+    50% {
+        opacity: .50;
+        background: linear-gradient(to top, #E16FDA 0%, #E270DA 43%, #A55CDB 70%, #AB65ED 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        font-size: 26px;
+    }
+    75% {
+        opacity: .75;
+        background: linear-gradient(to top, #E16FDA 0%, #E270DA 43%, #A55CDB 70%, #AB65ED 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        font-size: 26px;
+    }
+    100% {
+        opacity: 1;
+        background: linear-gradient(to top, #E16FDA 0%, #E270DA 43%, #A55CDB 70%, #AB65ED 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        font-size: 26px;
+        margin-bottom: 5px;
+    }
 }
 
-.dummy {
-    display: none;
-}
-
-/*Paramètres globaux des recettes*/
+/* Paramètres des Sous titres*/
 
 .SousTitre {
     margin-left: 15px;
@@ -215,45 +251,100 @@ i.coeurvide {
     border-bottom: solid #99E2D0;
 }
 
-.entrées__choix, .plats__choix, .desserts__choix {
+/*Paramètres des des plats de la carte*/
+
+.plat {
+    display: flex;
     background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 6px 6px 4px #e7e7e7;
     border-radius: 20px;
     margin: 0 15px;
-    margin: 0 14px;
-    width: 90%;
     width: 93%;
     display: flex;
-    flex-direction: column;
     gap: 5px;
     padding-left: 10px;
     overflow: hidden;
-    box-shadow: 6px 6px 4px #e7e7e7;
     cursor: pointer;
     transition: transform 330ms ease-in-out;
     animation-fill-mode: backwards;
-}
+    font-family: 'Roboto';
+    margin-bottom: 15px;
+  }
 
-/*Paramètres concernant l'animation du menu*/
+  .text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .description {
+      font-size: 15px;
+      margin-top: 5px;
+      margin-bottom: -2px;
+  }
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .price {
+    align-self: flex-end;
+  }
+
+  .checkbox {
+    width: 0px;
+    height: 80px;
+    color: white;
+    background-color: #99E2D0;
+    justify-content: center;
+    align-items: center;
+    align-self:flex-end;
+    display: flex;
+    overflow:hidden;
+    transition: width 0.5s;
+  }
+
+  .fa-check-circle {
+      font-size: 25px;
+  }
+
+  .plat:hover .checkbox {
+    width: 80px;
+   }
+
+   .plat:hover .checkbox i {
+     animation: routourne 1s;
+   }
+
+   .plat:not(:hover) .checkbox i {
+     animation: vatourner 1s;
+   }
+
+  @keyframes routourne {
+    0% {
+      transform: rotate(-180deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+
+  @keyframes vatourner {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(-180deg);
+    }
+  }
+
+/*animation des Slide*/
 
 .slide-top {
-    opacity: 0;
-    -webkit-animation: slide-top 1.75s linear forwards 0.25s;
-    animation: slide-top 1.75s linear forwards 0.25s;
-}
-
-.slide-top2 {
-    opacity: 0;
-    -webkit-animation: slide-top 1.75s linear forwards 0.5s;
-    animation: slide-top 1.75s linear forwards 0.5s;
-}
-
-.slide-top3 {
-    opacity: 0;
-    -webkit-animation: slide-top 1.75s linear forwards 0.75s;
-    animation: slide-top 1.75s linear forwards 0.75s;
-}
-
-.slide-top4 {
     opacity: 0;
     -webkit-animation: slide-top 1.75s linear forwards 0.25s;
     animation: slide-top 1.75s linear forwards 0.25s;
@@ -277,80 +368,12 @@ i.coeurvide {
     }
 }
 
-/*Paramètres des intitulé et du prix*/
-
-.intitule {
-    margin-top: 11px;
-    margin-left: 5px;
-    overflow: hidden;
-}
-
-.intitule p {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-size: 18px;
-}
-
-.detail_prix {
-    display: flex;
-    flex-direction: row;
-    gap: 5px;
-    justify-content: space-between;
-    align-items: baseline;
-    cursor: pointer;
-    flex-wrap: nowrap;
-}
-
-.detail {
-    flex: 3;
-    margin-left: 5px;
-    font-size: 13px;
-    font-size: 15px;
-    font-size: 14px;
-    overflow: hidden;
-}
-
-.detail p {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.prix {
-    flex: 1;
-    text-align: end;
-    margin-right: 30px;
-    margin-bottom: 11px;
-    font-size: 13px;
-    font-size: 16px;
-}
-
-/* Paramètres propres aux plats*/
-
-.plats {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        z-index: 15;
-}
-
-/* Paramètres propres aux desserts*/
-
-
-.desserts {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    z-index: 15;
-}
-
 /* Paramètres propres du bouton commander*/
 
 .Commander {
     margin-top: 50px;
     margin-bottom: 80px;
-    padding-left: 92px;
+
     margin-right: auto;
     margin-left: auto;
     display: flex;
@@ -374,6 +397,11 @@ i.coeurvide {
     border: transparent;
     box-shadow: 6px 6px 4px #e7e7e7;
     transition: box-shadow 0.3s, filter 0.3s;
+}
+
+.Commander--input:hover{
+    filter: brightness(110%);
+    box-shadow: 6px 6px 4px #333;
 }
 
 .Commander--input p {
@@ -423,6 +451,9 @@ footer a :hover {
     flex-direction: row;
     gap: 10px;
 }
+.padding {
+    padding-right: 7px;
+ }
 
 /*Média queries pour les différentes tailles d'écran*/
 
