@@ -174,6 +174,11 @@ img {
     cursor: pointer;
 }
 
+i.coeurvide {
+    padding-right: 2px;
+    padding-top: 2px;
+}
+
 i.coeurplein {
     opacity: 0;
     z-index: 8;
@@ -181,23 +186,14 @@ i.coeurplein {
 
 i.coeurplein:hover {
     z-index: 8;
-    animation: remplissage 0.3s linear forwards;
+    animation: remplir 0.3s linear forwards;
     opacity: 1;
-}
-
-
-i.coeurvide {
-    z-index: 6;
-    opacity: 1;
-    height: 100%;
-    padding-right: 2px;
-    padding-top: 2px;
 }
 
 
 /*Keyframes pour l'animation du remplissage du coeur*/
 
-@keyframes remplissage {
+@keyframes remplir {
     0% {
     opacity: .25;
     background: linear-gradient(to top, #E16FDA 0%, #E270DA 43%, #A55CDB 70%, #AB65ED 100%);
@@ -243,33 +239,103 @@ i.coeurvide {
 
 /*Paramètres des entrées*/
 
-.entrees {
+
+
+.plat {
+    display: flex;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 6px 6px 4px #e7e7e7;
+    border-radius: 20px;
+    margin: 0 15px;
+    width: 93%;
+    display: flex;
+    gap: 5px;
+    padding-left: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 330ms ease-in-out;
+    animation-fill-mode: backwards;
+    font-family: 'Roboto';
+    margin-bottom: 15px;
+  }
+
+  .text {
     display: flex;
     flex-direction: column;
-    flex-wrap: nowrap;
-    gap: 15px;
-    z-index: 15;
-    transition: all 1.5s ease-out;
-}
+  }
 
-/* Paramètres propres aux plats*/
+  .description {
+      font-size: 15px;
+      margin-top: 5px;
+      margin-bottom: -2px;
+  }
 
-.plats {
+  .detail_prix {
+      display: flex;
+      flex-direction: row;
+  }
+
+  .content {
     display: flex;
-    flex-direction: column;
-    gap: 15px;
-    z-index: 15;
-}
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+  }
 
-/* Paramètres propres aux desserts*/
+  .price {
+    align-self: flex-end;
+  }
 
 
-.desserts {
-display: flex;
-flex-direction: column;
-gap: 15px;
-z-index: 15;
-}
+
+  .checkbox {
+    width: 0px;
+    height: 80px;
+    color: white;
+    background-color: #99E2D0;
+    justify-content: center;
+    align-items: center;
+    align-self:flex-end;
+    display: flex;
+    overflow:hidden;
+    transition: width 0.5s;
+  }
+
+  .fa-check-circle {
+      font-size: 25px;
+  }
+
+  .plat:hover .checkbox {
+    width: 80px;
+   }
+
+   .plat:hover .checkbox i {
+     animation: routourne 1s;
+   }
+
+   .plat:not(:hover) .checkbox i {
+     animation: vatourner 1s;
+   }
+
+  @keyframes routourne {
+    0% {
+      transform: rotate(-180deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+
+  @keyframes vatourner {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(-180deg);
+    }
+  }
 
 /*Paramètres globaux des recettes*/
 
@@ -285,74 +351,7 @@ z-index: 15;
     border-bottom: solid #99E2D0;
 }
 
-.entrees__choix, .plats__choix, .desserts__choix {
-    background-color: white;
-    border-radius: 20px;
-    margin: 0 15px;
-    margin: 0 14px;
-    width: 90%;
-    width: 93%;
-    display: flex;
-    gap: 5px;
-    padding-left: 10px;
-    overflow: hidden;
-    box-shadow: 6px 6px 4px #e7e7e7;
-    cursor: pointer;
-    transition: transform 330ms ease-in-out;
-    animation-fill-mode: backwards;
-}
-
-.check {
-    display: none;
-    cursor: pointer;
-    transition: transform 330ms ease-in-out;
-    animation: slide-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-    animation-fill-mode: backwards;
-    display: flex;
-    font-size: 22px;
-    color: white;
-    background-color: #99E2D0;
-    cursor: pointer;
-    justify-content: center;
-    align-items: center;
-    z-index: 15;
-    height: 100%;
-    min-height: 69px;
-    border-bottom-right-radius: 20px;
-    border-top-right-radius: 20px;
-    flex-wrap: wrap;
-    max-width: 0px;
-    width: 0%;
-    margin-right: 0px;
-    margin-left: auto;
-    transition-duration: 5.5s;
-    transition-timing-function: ease;
-    transition: width 5s;
-    align-self:flex-end;
-}
-
-
-/*Paramètres concernant l'animation du menu*/
-
 .slide-top {
-    opacity: 0;
-    -webkit-animation: slide-top 1.75s linear forwards 0.25s;
-    animation: slide-top 1.75s linear forwards 0.25s;
-}
-
-.slide-top2 {
-    opacity: 0;
-    -webkit-animation: slide-top 1.75s linear forwards 0.5s;
-    animation: slide-top 1.75s linear forwards 0.5s;
-}
-
-.slide-top3 {
-    opacity: 0;
-    -webkit-animation: slide-top 1.75s linear forwards 0.75s;
-    animation: slide-top 1.75s linear forwards 0.75s;
-}
-
-.slide-top4 {
     opacity: 0;
     -webkit-animation: slide-top 1.75s linear forwards 0.25s;
     animation: slide-top 1.75s linear forwards 0.25s;
@@ -373,95 +372,6 @@ z-index: 15;
         -webkit-transform: translateY(-2.5px);
         transform: translateY(-2.5px);
         opacity: 1;
-    }
-}
-
-/*Paramètres des intitulé et du prix*/
-
-.intitule {
-    margin-top: 11px;
-    margin-left: 5px;
-    overflow: hidden;
-}
-
-.intitule p {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-size: 18px;
-}
-
-.detail_prix {
-    display: flex;
-    flex-direction: row;
-    gap: 5px;
-    justify-content: space-between;
-    align-items: baseline;
-    cursor: pointer;
-    flex-wrap: nowrap;
-}
-
-.detail {
-    flex: 3;
-    margin-left: 5px;
-    font-size: 13px;
-    font-size: 15px;
-    font-size: 14px;
-    overflow: hidden;
-}
-
-.detail p {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.prix {
-    flex: 1;
-    text-align: end;
-    margin-right: 30px;
-    margin-bottom: 11px;
-    font-size: 13px;
-    font-size: 16px;
-    align-self: flex-end;
-}
-
-/*Paramtères des animations de la checkbox*/
-
-.entrees__choix:hover .check, .plats__choix:hover .check, .desserts__choix:hover .check {
-    display: flex;
-    font-size: 22px;
-    color: white;
-    background-color: #99E2D0;
-    cursor: pointer;
-    justify-content: center;
-    align-items: center;
-    z-index: 15;
-    height: 100%;
-    min-height: 69px;
-    max-width: 58px;
-    width: 100%;
-    border-bottom-right-radius: 20px;
-    border-top-right-radius: 20px;
-    flex-wrap: wrap;
-    margin-right: 0px;
-    transition-timing-function: ease;
-}
-
-.entrees__choix:hover i.rotation, .plats__choix:hover i.rotation, .desserts__choix:hover i.rotation {
-    animation: routourne 1s ease-in-out both;
-}
-
-@keyframes routourne {
-0% {
-    -webkit-transform: rotate(0);
-    transform: rotate(0);
-    margin-right: -20px;
-    }
-100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-    margin-right: 0px;
     }
 }
 
