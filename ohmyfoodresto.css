@@ -95,7 +95,7 @@ img {
     display: block;
 }
 
-.pic_fit {
+.picture {
     object-fit: cover;
 }
 
