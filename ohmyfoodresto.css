@@ -30,6 +30,12 @@ p {
     font-family: 'Roboto', sans-serif;
 }
 
+span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 /* Paramètres globaux des icônes*/
 
 .fa, .fab, .fad, .fal, .far, .fas {
@@ -149,6 +155,7 @@ img {
     border-color: #f6f6f6  transparent;
     z-index: 5;
     margin-top: -60px;
+    padding-bottom: 50px;
 }
 
 .gastronomie__LaCarte {
@@ -172,13 +179,13 @@ img {
     font-size: 23.5px;
     position: absolute;
     right: 20px;
-    bottom: 35px;
+    bottom: 30px;
     cursor: pointer;
 }
 
 i.coeurvide {
     padding-right: 2px;
-    padding-bottom: 5px;
+    padding-bottom: 6px;
 }
 
 i.coeurplein {
@@ -282,56 +289,61 @@ i.coeurplein:hover {
     animation-fill-mode: backwards;
     font-family: 'Roboto';
     margin-bottom: 15px;
+
   }
 
-  .text {
+.text {
     display: flex;
     flex-direction: column;
+    overflow: hidden;
   }
 
-  .description {
+.description {
       font-size: 15px;
       margin-top: 5px;
       margin-bottom: -2px;
   }
 
-  .content {
+.content {
     display: flex;
     justify-content: space-between;
     width: 100%;
     padding: 10px;
+    overflow:hidden;
   }
 
   .price {
     align-self: flex-end;
   }
 
-  .checkbox {
+.checkbox {
     width: 0px;
-    height: 80px;
     color: white;
     background-color: #99E2D0;
     justify-content: center;
     align-items: center;
-    align-self:flex-end;
     display: flex;
     overflow:hidden;
     transition: width 0.5s;
+    z-index: 15;
   }
 
-  .fa-check-circle {
+.fa-check-circle {
       font-size: 25px;
   }
 
-  .plat:hover .checkbox {
+.description:hover{
+    text-overflow: ellipsis;
+}
+.plat:hover .checkbox {
     width: 80px;
    }
 
-   .plat:hover .checkbox i {
+.plat:hover .checkbox i {
      animation: routourne 1s;
    }
 
-   .plat:not(:hover) .checkbox i {
+.plat:not(:hover) .checkbox i {
      animation: vatourner 1s;
    }
 
@@ -383,12 +395,12 @@ i.coeurplein:hover {
 
 .Commander {
     margin-top: 50px;
-    margin-bottom: 80px;
-
+    margin-bottom: 130px;
     margin-right: auto;
     margin-left: auto;
     display: flex;
     justify-content: center;
+    padding-top: 50px;
 }
 
 .Commander--input {
@@ -428,7 +440,6 @@ i.coeurplein:hover {
     display: flex;
     flex-direction: column;
     background-color:#353535;
-    margin-top: 60px;
     color: white;
 }
 
@@ -446,7 +457,7 @@ footer>h3 {
     flex-direction: row;
     justify-content: space-around;
     align-self: flex-start;
-    gap: 20px;
+    gap: 50px;
     margin-left: 125px;
     margin-bottom: 35px;
 }
@@ -473,39 +484,6 @@ footer a :hover {
 
 /*Média queries pour les différentes tailles d'écran*/
 
-/*Média queries pour les écrans au dessus de 768px*/
-
-@media screen and (min-width: 768px)
-{
-    .header__logo__ohmyfood
-     {
-     width: 70%;
-     margin-left: auto;
-     margin-right: auto;
-     }
- }
-
- @media screen and (min-width: 768px)
-{
-    .restaurants__ContainerFlex
-    {
-    display: inline-flex;
-    flex-direction: column;
-    width: 100%;
-    height: 50%;
-    }
-}
-
-@media screen and (min-width: 768px)
-{
-.restaurants__ContainerFlex {
-    gap: 20px;
-    flex-direction: row;
-    margin-top: 45px;
-    flex-wrap: wrap;
-    }
-}
-
 /*Format spécial pour les Nest Hub ( footer de l'écran pc sur les Nest Hub )*/
 
 @media screen and (max-width: 1000px)
@@ -527,6 +505,14 @@ footer a :hover {
     }
 }
 
+@media screen and (max-width: 1024px)
+{
+    .footer__bottom__row
+    {
+    margin-bottom: 0px;
+    }
+}
+
 @media screen and (max-width: 1280px)
 {
     .footer__bottom__row
@@ -541,11 +527,25 @@ footer a :hover {
 {
     .footer>h3
     {
+    margin-top: 30px;
     margin-left: 15px;
+    margin-bottom: 30px;
+
     }
 }
 
 /* Media queries pour les écrans ne dépassant pas 768 px */
+
+@media screen and (max-width: 768px)
+{
+    h1
+     {
+    z-index: 15;
+    font-size: 30px;
+    font-family: 'Shrikhand', cursive;
+    margin-bottom: 50px;
+     }
+ }
 
 @media screen and (max-width: 768px)
 {
@@ -557,13 +557,16 @@ footer a :hover {
      }
  }
 
-@media screen and (max-width: 768px)
-{
-    .Explications__options {
-        display: flex;
-        flex-direction: column;
+ @media screen and (max-width: 768px)
+ {
+    .coeurplein, .coeurvide {
+        font-size: 23.5px;
+        position: absolute;
+        right: 5px;
+        bottom: 25px;
+        cursor: pointer;
     }
-}
+  }
 
 @media screen and (max-width: 768px)
 {
@@ -583,6 +586,7 @@ footer a :hover {
     display:flex;
     flex-direction: column;
     margin-left: 15px;
+    gap: 20px;
     }
 }
 
@@ -602,7 +606,80 @@ footer a :hover {
     .footer>h3
     {
     margin-left: 15px;
-    margin-bottom: 15px;
-    margin-top: 30px;;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    }
+}
+
+/* Media queries pour les écrans ne dépassant pas 390 px */
+
+@media screen and (max-width: 390px)
+{
+    h1
+     {
+    z-index: 15;
+    font-size: 25px;
+    font-family: 'Shrikhand', cursive;
+    margin-bottom: 50px;
+    margin-left: 20px;
+     }
+ }
+
+ @media screen and (max-width: 390px)
+ {
+    .coeurplein, .coeurvide {
+        font-size: 23.5px;
+        position: absolute;
+        right: 0px;
+        bottom: 23px;
+        cursor: pointer;
+    }
+  }
+
+  @media screen and (max-width: 390px)
+{
+    .footer__bottom__row
+    {
+    margin-bottom: 0px;
+    }
+}
+
+@media screen and (max-width: 390px)
+{
+    .footer>h3
+    {
+    margin-bottom: 30px;
+    }
+}
+/* Media queries pour les écrans ne dépassant pas 280 px */
+
+  @media screen and (max-width: 280px)
+{
+    h1
+     {
+    z-index: 15;
+    font-size: 18px;
+    font-family: 'Shrikhand', cursive;
+    margin-bottom: 30px;
+    padding-bottom: 5px;
+     }
+ }
+
+ @media screen and (max-width: 280px)
+ {
+    .coeurplein, .coeurvide {
+        font-size: 23.5px;
+        position: absolute;
+        right: 0px;
+        bottom: 0px;
+        cursor: pointer;
+    }
+  }
+
+  @media screen and (max-width: 280px)
+{
+    .footer__bottom__row
+    {
+    margin-bottom: 0px;
     }
 }

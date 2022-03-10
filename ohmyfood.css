@@ -622,6 +622,14 @@ footer a :hover {
     }
 }
 
+@media screen and (max-width: 1024px)
+{
+    .footer__bottom__row
+    {
+    margin-bottom: 0px;
+    }
+}
+
 @media screen and (max-width: 1280px)
 {
     .footer__bottom__row
